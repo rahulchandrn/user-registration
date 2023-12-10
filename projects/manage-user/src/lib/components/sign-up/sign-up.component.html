@@ -1,0 +1,26 @@
+<form name="SignUpForm" #f="ngForm" class="">
+    <p-card header="Register your account" class="signup-form">
+        <div class="field" *ngFor="let eachField of getFields(0) as fields; let fieldId=index">
+            <div>{{ eachField.label }}</div>
+
+            <input type="text" pInputText [(ngModel)]="eachField.fieldControl" class="w-full"
+                name="{{ eachField.fieldName }}" placeholder="{{ eachField.placeholder }}"
+                *ngIf="eachField.type === 'text'"
+                (blur)="validateInputFields($event, eachField?.fieldName, eachField.fieldPattern, eachField.errorMsg, eachField.label)" />
+
+            <input type="password" pInputText [(ngModel)]="eachField.fieldControl" class="w-full"
+                name="{{ eachField.fieldName }}" placeholder="{{ eachField.placeholder }}"
+                *ngIf="eachField.type === 'password'"
+                (blur)="validateInputFields($event, eachField?.fieldName, eachField.fieldPattern, eachField.errorMsg, eachField.label)" />
+
+            <small *ngIf="invalidInputFields[eachField.fieldName]['hasError']" class="block p-error">
+                <div>{{ invalidInputFields[eachField.fieldName]['errorMsg'] }}</div>
+            </small>
+        </div>
+
+        <p-button label="Register" styleClass="w-full" [disabled]="!isFormValid" (click)="submitForm()"></p-button>
+        <div class="mt-2">
+            Already a member? <a routerLink="/login">Login</a>
+        </div>
+    </p-card>
+</form>

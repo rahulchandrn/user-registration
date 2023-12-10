@@ -1,0 +1,52 @@
+[
+    {
+        "groupName": "Sign Up form fields",
+        "fields": [
+            {
+                "fieldName": "firstName",
+                "labelKey": "First Name",
+                "fieldType": "text",
+                "validationRegex": "^[a-zA-Z]+(?: [a-zA-Z]+)*$",
+                "isMandatory": true,
+                "placeholder": "Please enter your first name",
+                "errorMsg": "Name should contains alphabets and space only"
+            },
+            {
+                "fieldName": "lastName",
+                "labelKey": "Last Name",
+                "fieldType": "text",
+                "validationRegex": "^[a-zA-Z]+(?: [a-zA-Z]+)*$",
+                "isMandatory": true,
+                "placeholder": "Please enter your last name",
+                "errorMsg": "Name should contains alphabets and space only"
+            },
+            {
+                "fieldName": "email",
+                "labelKey": "Email",
+                "fieldType": "text",
+                "validationRegex": "^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$",
+                "isMandatory": true,
+                "placeholder": "Please enter your email address",
+                "errorMsg": "Invalid email address"
+            },
+            {
+                "fieldName": "password",
+                "labelKey": "Password",
+                "fieldType": "password",
+                "validationRegex": "^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$",
+                "isMandatory": true,
+                "placeholder": "Please enter your password",
+                "errorMsg": "Password should contains alphabets, one number and one special character and a length of 6-16"
+            },
+            {
+                "fieldName": "confirmPassword",
+                "labelKey": "Confirm Password",
+                "fieldType": "password",
+                "validationRegex": "^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$",
+                "isMandatory": true,
+                "placeholder": "Please re-enter your password",
+                "errorMsg": "Password should contains alphabets, one number and one special character and a length of 6-16"
+            }
+        ]
+    }
+]
